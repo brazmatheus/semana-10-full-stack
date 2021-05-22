@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>{{ titulo }}</mat-card-title>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>-- Selecione a pessoa --</mat-label>
+            <mat-select [(ngModel)]="professor.pessoa" name="pessoa">
+              <mat-option *ngFor="let pessoa of pessoas" [value]="pessoa">
+                {{pessoa.nmPessoa}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>-- Selecione a Escolaridade --</mat-label>
+            <mat-select [(ngModel)]="professor.escolaridade" name="escolaridade">
+              <mat-option *ngFor="let escolaridade of escolaridades  | keyvalue" [value]="escolaridade.key">
+                {{escolaridade.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+    <button mat-raised-button color="warn" routerLink="/disciplina/list">Cancelar</button>
+
+</mat-card>

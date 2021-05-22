@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-title>{{ titulo }}</mat-card-title>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>-- Selecione a discilina --</mat-label>
+            <mat-select [(ngModel)]="oferta.disciplina" name="disciplina">
+              <mat-option *ngFor="let disciplina of disciplinas" [value]="disciplina">
+                {{disciplina.nmDisciplina}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>-- Selecione o Professor --</mat-label>
+            <mat-select [(ngModel)]="oferta.professor" name="professor">
+              <mat-option *ngFor="let professor of professores" [value]="professor">
+                {{professor.pessoa.nmPessoa}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill">
+            <mat-label>-- Selecione o Dia da Aula --</mat-label>
+            <mat-select [(ngModel)]="oferta.dia" name="dia">
+              <mat-option *ngFor="let dia of dias  | keyvalue" [value]="dia.key">
+                {{dia.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="date" placeholder="Data de Início" [(ngModel)]="dtInicio" name="dtInicio">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="date" placeholder="Data de Términio" [(ngModel)]="dtFim" name="dtFim">
+        </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+    <button mat-raised-button color="warn" routerLink="/disciplina/list">Cancelar</button>
+
+</mat-card>

@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>{{ titulo }}</mat-card-title>
+    <form>
+
+        <mat-form-field appearance="fill">
+            <mat-label>-- Selecione a Pessoa --</mat-label>
+            <mat-select [(ngModel)]="aluno.pessoa" name="pessoa">
+                <mat-option *ngFor="let pessoa of pessoas" [value]="pessoa">
+                    {{pessoa.nmPessoa}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" placeholder="Data de Inicio" [(ngModel)]="aluno.dtInicio" name="dtInicio">
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <input matInput type="number" placeholder="Carga Horária" [(ngModel)]="aluno.cargaHoraria"
+                name="cargaHoraria">
+        </mat-form-field> -->
+        <mat-form-field appearance="fill">
+            <mat-label>-- Selecione o Curso --</mat-label>
+            <mat-select [(ngModel)]="aluno.curso" name="curso">
+                <mat-option *ngFor="let curso of cursos" [value]="curso">
+                    {{curso.nmCurso}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <input matInput type="number" placeholder="Carga Horária" [(ngModel)]="aluno.cargaHoraria"
+                name="cargaHoraria">
+        </mat-form-field> -->
+    </form>
+
+    <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+    <button mat-raised-button color="warn" routerLink="/aluno/list">Cancelar</button>
+
+</mat-card>

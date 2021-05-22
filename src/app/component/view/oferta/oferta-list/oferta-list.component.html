@@ -1,0 +1,60 @@
+<mat-card class="example-card  mat-elevation-z3">
+  <button mat-raised-button class="button_new" color="primary" routerLink="/oferta/form">Nova Oferta</button>
+  <mat-card-header>
+    <mat-card-title>Ofertas</mat-card-title>
+    <mat-card-subtitle>Lista das Ofertas Cadastradas </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="ofertas" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> #ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.idOferta}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="disciplina">
+        <th mat-header-cell *matHeaderCellDef> Disciplina </th>
+        <td mat-cell *matCellDef="let element"> {{element.disciplina.nmDisciplina}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="professor">
+        <th mat-header-cell *matHeaderCellDef> Professor </th>
+        <td mat-cell *matCellDef="let element"> {{element.professor.pessoa.nmPessoa}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dia">
+        <th mat-header-cell *matHeaderCellDef> Dia </th>
+        <td mat-cell *matCellDef="let element"> {{getDia(element.dia)}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="inicio">
+        <th mat-header-cell *matHeaderCellDef> Início </th>
+        <td mat-cell *matCellDef="let element"> {{element.dtInicio | formatDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fim">
+        <th mat-header-cell *matHeaderCellDef> Fim </th>
+        <td mat-cell *matCellDef="let element"> {{element.dtFim | formatDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="/oferta/form/{{element.idOferta}}" class="edit">
+            <button mat-raised-button color="primary"><i class="material-icons">edit</i> Editar</button>
+          </a>
+          <a>
+            <button mat-raised-button color="warn" (click)="excluir(element)"><i class="material-icons">delete</i>
+              Excluir</button>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+</mat-card>

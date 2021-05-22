@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>{{ titulo }}</mat-card-title>
+  <form>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Nome do Curso" [(ngModel)]="curso.nmCurso" name="nmCurso">
+    </mat-form-field>
+
+  </form>
+
+  <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-raised-button color="warn" routerLink="/disciplina/list">Cancelar</button>
+
+</mat-card>

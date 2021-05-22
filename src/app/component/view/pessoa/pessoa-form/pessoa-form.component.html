@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>{{ titulo }}</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" 
+                [(ngModel)]="pessoa.nmPessoa" 
+                name="nmPessoa">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="CPF" [(ngModel)]="pessoa.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" placeholder="Data de Nascimento" [(ngModel)]="dtNascimento" name="dtNascimento">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+    <button mat-raised-button color="warn" routerLink="/pessoa/list">Cancelar</button>
+
+</mat-card>
