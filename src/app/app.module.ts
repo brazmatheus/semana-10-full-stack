@@ -42,6 +42,8 @@ import { AlunoFormComponent } from './component/view/aluno/aluno-form/aluno-form
 import { AlunoListComponent } from './component/view/aluno/aluno-list/aluno-list.component';
 import { CursoFormComponent } from './component/view/curso/curso-form/curso-form.component';
 import { CursoListComponent } from './component/view/curso/curso-list/curso-list.component';
+import { CursoUpdateComponent } from './component/view/curso/curso-update/curso-update.component';
+import { AlunoUpdateComponent } from './component/view/aluno/aluno-update/aluno-update.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { CursoListComponent } from './component/view/curso/curso-list/curso-list
     ProfessorUpdateComponent,
     OfertaUpdateComponent,
     CursoFormComponent,
-    CursoListComponent
+    CursoListComponent,
+    CursoUpdateComponent,
+    AlunoUpdateComponent
   ],
   imports: [
     BrowserModule,

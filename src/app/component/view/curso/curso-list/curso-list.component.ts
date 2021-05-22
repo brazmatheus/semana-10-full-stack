@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class CursoListComponent implements OnInit {
 
   curso: Curso[] = [];
-  displayedColumns: string[] = ['id', 'nome'];
+  displayedColumns: string[] = ['id', 'nome', 'acao'];
   constructor(private service: CursoService, public dialog: MatDialog) { }
 
   atualizarTabela(): void {

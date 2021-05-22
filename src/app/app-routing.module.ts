@@ -18,6 +18,8 @@ import { AlunoListComponent } from './component/view/aluno/aluno-list/aluno-list
 import { AlunoFormComponent } from './component/view/aluno/aluno-form/aluno-form.component';
 import { CursoListComponent } from './component/view/curso/curso-list/curso-list.component';
 import { CursoFormComponent } from './component/view/curso/curso-form/curso-form.component';
+import { AlunoUpdateComponent } from './component/view/aluno/aluno-update/aluno-update.component';
+import { CursoUpdateComponent } from './component/view/curso/curso-update/curso-update.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,8 +37,10 @@ const routes: Routes = [
   { path: 'oferta/form/:id', component: OfertaUpdateComponent },
   { path: 'aluno/list', component: AlunoListComponent },
   { path: 'aluno/form', component: AlunoFormComponent },
+  { path: 'aluno/form/:id', component: AlunoUpdateComponent },
   { path: 'curso/list', component: CursoListComponent },
-  { path: 'curso/form', component: CursoFormComponent }
+  { path: 'curso/form', component: CursoFormComponent },
+  { path: 'curso/form/:id', component: CursoUpdateComponent }
 ];
 
 
