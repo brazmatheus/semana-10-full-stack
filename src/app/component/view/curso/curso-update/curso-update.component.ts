@@ -31,13 +31,12 @@ export class CursoUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    
+    console.log(id);
     this.cursoService.findAll().subscribe(cursos =>{
       this.cursos = cursos;
     });
     this.service.findById(id).subscribe(curso => {
       this.curso = curso;
-      console.log(this.curso)
     });
 
     

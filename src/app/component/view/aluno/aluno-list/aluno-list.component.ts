@@ -12,7 +12,7 @@ import { DeleteConfirmComponent } from 'src/app/component/template/delete-confir
 export class AlunoListComponent implements OnInit {
 
   aluno: Aluno[] = [];
-  displayedColumns: string[] = ['id', 'nmAluno', 'dtInicio', 'acao'];
+  displayedColumns: string[] = ['id', 'nmAluno', 'dtInicio', 'curso', 'acao'];
   constructor(private service: AlunoService, public dialog: MatDialog) { }
 
   atualizarTabela(): void {
